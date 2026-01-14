@@ -1,16 +1,21 @@
 import { defineConfig } from 'tsdown';
 
+/**
+ * Browser-specific library configuration
+ * - DOM APIs available
+ * - Bundle size optimized (minify enabled)
+ * - Node.js built-in modules unavailable
+ */
 export default defineConfig({
   entry: ['src/index.ts'],
   outDir: 'dist',
   format: ['esm'],
   target: 'es2022',
-  platform: 'neutral',
+  platform: 'browser',
   clean: true,
   exports: true,
   skipNodeModulesBundle: true,
   failOnWarn: 'ci-only',
-  inlineOnly: ['is-in-ci', 'pkg-types', 'exsolve'],
   treeshake: {
     moduleSideEffects: false,
   },
@@ -20,4 +25,5 @@ export default defineConfig({
     },
   },
   sourcemap: true,
+  minify: true,
 });
