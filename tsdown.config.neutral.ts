@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsdown';
 
 /**
- * Cross-platform library configuration (Node.js, Deno, Bun)
+ * Platform-agnostic configuration with no runtime assumptions
  * - Avoid runtime-specific APIs
  * - Pure JavaScript/TypeScript logic only
  */

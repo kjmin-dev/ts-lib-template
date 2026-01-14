@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsdown';
 
 /**
- * Browser-specific library configuration
+ * Configuration for web browsers
  * - DOM APIs available
  * - Bundle size optimized (minify enabled)
  * - Node.js built-in modules unavailable

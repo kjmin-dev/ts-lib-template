@@ -44,9 +44,9 @@ Platform-specific tsdown configuration presets are provided. Choose the one that
 
 | File | Platform | Use Case |
 |------|----------|----------|
-| `tsdown.config.node.ts` | Node.js | Node.js-specific libraries |
-| `tsdown.config.neutral.ts` | Neutral | Cross-platform (Node/Deno/Bun) |
-| `tsdown.config.browser.ts` | Browser | Browser-specific libraries |
+| `tsdown.config.node.ts` | Node | Node.js and compatible runtimes (Deno, Bun) |
+| `tsdown.config.neutral.ts` | Neutral | Platform-agnostic with no runtime assumptions |
+| `tsdown.config.browser.ts` | Browser | Web browsers |
 
 ### Usage
 
@@ -58,17 +58,19 @@ bunx tsdown --config tsdown.config.node.ts
 
 ### Configuration Details
 
-#### Node.js (`platform: 'node'`)
+#### Node (`platform: 'node'`)
+- Node.js and compatible runtimes (Deno, Bun)
 - `target: 'node18'` - Supports Node.js 18+
 - `shims: true` - Provides Node.js compatibility shims
 - Node.js built-in modules available (fs, path, crypto, etc.)
 
 #### Neutral (`platform: 'neutral'`)
+- Platform-agnostic with no specific runtime assumptions
 - `target: 'es2022'` - Standard ECMAScript target
-- Runtime-agnostic code
-- Compatible with Node.js, Deno, and Bun
+- Pure JavaScript/TypeScript logic only
 
 #### Browser (`platform: 'browser'`)
+- Web browsers
 - `target: 'es2022'` - Modern browser target
 - `minify: true` - Minimizes bundle size
 - DOM APIs available, Node.js APIs unavailable
