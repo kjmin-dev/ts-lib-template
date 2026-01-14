@@ -36,5 +36,24 @@ bun run format       # Format code
 ## Code Style
 
 - Single quotes, semicolons required
-- Follow Biome rules in `biome.json`
+- 2 spaces indentation, 120 line width
 - Use Vitest for tests: `import { test, expect } from 'vitest'`
+
+## Biome Lint Rules
+
+Follow Biome recommended rules. Key rules to remember:
+
+- **No non-null assertions** (`!`) - use proper null checks or type guards
+- **No explicit `any`** - use `unknown` or proper types
+- **No unused variables** - remove or prefix with `_`
+- **Use `===` and `!==`** - avoid loose equality
+- **No parameter reassignment** - use new variables instead
+- **Prefer `const`** - use `let` only when reassignment is needed
+- **No empty blocks** - add implementation or remove
+
+## TypeScript Rules
+
+This project uses `isolatedDeclarations` for faster DTS generation:
+
+- **Explicit return types required** on all exported functions and methods
+- **Explicit types on public class members** (getters, setters, methods)
